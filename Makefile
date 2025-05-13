@@ -12,6 +12,10 @@ KERNEL_BIN = target/$(TARGET)/$(RELEASE)/kernel.bin
 
 BUS  := device
 QEMU_EXEC := qemu-system-$(ARCH) 
+ifeq ($(ARCH), riscv64)
+  OPENSBI_PATH ?= /usr/lib/riscv64-linux-gnu/opensbi/generic/fw_jump.elf
+endif
+
 ifeq ($(ARCH), x86_64)
   QEMU_EXEC += -machine q35 \
 				-cpu IvyBridge-v2 \
@@ -19,7 +23,8 @@ ifeq ($(ARCH), x86_64)
   BUS := pci
 else ifeq ($(ARCH), riscv64)
   QEMU_EXEC += -machine virt \
-				-kernel $(KERNEL_BIN)
+              -bios $(OPENSBI_PATH) \
+              -kernel $(KERNEL_BIN)
 else ifeq ($(ARCH), aarch64)
   QEMU_EXEC += -cpu cortex-a72 \
 				-machine virt \
