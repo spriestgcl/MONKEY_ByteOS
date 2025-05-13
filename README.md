@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+# MONKEY_ByteOS
+![本地图片](./monkey.png "描述")
+>>>>>>> f620e8b73422d7fe29c835f32f9cb1887dae3bdc
+
 # ByteOS
 
 ## How to use this project
@@ -96,3 +101,4 @@ make run BOARD=qemu LOG=info NET=off
 ```
 
 Changing 'LOG=info' to 'LOG=error' if you don't need any info output.
+=======
