@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 # MONKEY_ByteOS
 ![本地图片](./monkey.png "描述")
->>>>>>> f620e8b73422d7fe29c835f32f9cb1887dae3bdc
+
 
 # ByteOS
 
